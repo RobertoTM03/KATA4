@@ -1,24 +1,22 @@
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        BufferedReader reader = new BufferedReader(new FileReader("./title.basics.tsv"));
-        reader.readLine();
-        Map<String, Integer> histogram = new HashMap<>();
+        TitleReader reader = new TsvTitleReader(new File("./title.basics.tsv"), true);
+        List<Title> titles = reader.read();
 
-        while (true){
-            String line = reader.readLine();
-            if (line == null) break;
-            String[] fields = line.split("\t");
-            histogram.putIfAbsent(fields[1], 0);
-            histogram.compute(fields[1], (k, v) -> v + 1);
+        Map<Title.TitleType, Integer> histogram = new HashMap<>();
+
+        for(Title title : titles){
+            histogram.putIfAbsent(title.type(), 0);
+            histogram.compute(title.type(), (k, v) -> v + 1);
         }
-
-        reader.close();
 
         System.out.println(histogram);
     }
