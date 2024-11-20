@@ -5,13 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b18cd072-c3f4-4d6e-b0d0-83826f2c3326" name="Changes" comment="Initial implementation of TSV reader and histogram generation">
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Title.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/TitleDeserializer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/TitleReader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/TsvTitleDeserializer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/TsvTitleReader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/control/HistogramGenerator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/model/Histogram.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/view/HistogramDisplay.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/view/JFreeBarChartHistogramDisplay.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/view/MainFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Title.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Title.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/TitleDeserializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/control/TitleDeserializer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/TitleReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/control/TitleReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/TsvTitleDeserializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/control/TsvTitleDeserializer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/TsvTitleReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/control/TsvTitleReader.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,10 +35,23 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="HARD" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 0
-}]]></component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;RobertoTM03&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/RobertoTM03/KATA2.git&quot;,
+    &quot;accountId&quot;: &quot;e8f76640-2eac-4386-a00a-defc125ba930&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
   <component name="ProjectId" id="2okFFLydAwdKOuc519BvqjHj3hq" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -45,9 +64,33 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true"
+    "kotlin-language-version-configured": "true",
+    "last_directory_selection": "C:/dev/IS2/Kata3/src/main/java"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="view" />
+      <recent name="model" />
+    </key>
+    <key name="MoveMembersDialog.RECENTS_KEY">
+      <recent name="HistogramGenerator" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="control" />
+      <recent name="model" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="Kata2" />
+      <option name="PROGRAM_PARAMETERS" value="C:\dev\IS2\title.basics.tsv" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -68,8 +111,20 @@
     <option name="localTasksCounter" value="2" />
     <servers />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial implementation of TSV reader and histogram generation" />
-    <option name="LAST_COMMIT_MESSAGE" value="Initial implementation of TSV reader and histogram generation" />
+    <MESSAGE value="Refactorized tsv reader" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactorized tsv reader" />
   </component>
 </project>

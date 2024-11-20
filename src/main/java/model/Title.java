@@ -1,3 +1,5 @@
+package model;
+
 import java.util.List;
 
 public record Title(String id, TitleType type, String title, String originalTitle, List<Genre> genres) {

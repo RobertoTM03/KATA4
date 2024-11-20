@@ -1,3 +1,7 @@
+package control;
+
+import model.Title;
+
 import java.io.IOException;
 import java.util.List;
 

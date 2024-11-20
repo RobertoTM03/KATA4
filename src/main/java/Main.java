@@ -1,23 +1,37 @@
-import java.io.BufferedReader;
+import control.HistogramGenerator;
+import control.TitleReader;
+import control.TsvTitleReader;
+import model.Histogram;
+import model.Title;
+import view.MainFrame;
+
 import java.io.File;
-import java.io.FileReader;
 import java.io.IOException;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        TitleReader reader = new TsvTitleReader(new File("./title.basics.tsv"), true);
+        checkNumberOfArgs(args);
+
+        TitleReader reader = new TsvTitleReader(new File(args[0]), true);
+        Histogram histogram = generateHistogram(reader);
+
+        display(histogram);
+    }
+
+    private static void display(Histogram histogram) {
+        MainFrame mainFrame = new MainFrame();
+        mainFrame.put(histogram);
+        mainFrame.setVisible(true);
+    }
+
+    private static Histogram generateHistogram(TitleReader reader) throws IOException {
         List<Title> titles = reader.read();
 
-        Map<Title.TitleType, Integer> histogram = new HashMap<>();
+        return HistogramGenerator.generate(titles);
+    }
 
-        for(Title title : titles){
-            histogram.putIfAbsent(title.type(), 0);
-            histogram.compute(title.type(), (k, v) -> v + 1);
-        }
-
-        System.out.println(histogram);
+    private static void checkNumberOfArgs(String[] args) throws IOException {
+        if (args.length != 1) throw new IOException("Incorrect number of args");
     }
 }

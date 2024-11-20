@@ -1,3 +1,7 @@
+package control;
+
+import model.Title;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
