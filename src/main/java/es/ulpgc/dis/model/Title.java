@@ -1,4 +1,4 @@
-package model;
+package es.ulpgc.dis.model;
 
 import java.util.List;
 

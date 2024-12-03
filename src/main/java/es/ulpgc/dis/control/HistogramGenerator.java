@@ -1,7 +1,7 @@
-package control;
+package es.ulpgc.dis.control;
 
-import model.Histogram;
-import model.Title;
+import es.ulpgc.dis.model.Histogram;
+import es.ulpgc.dis.model.Title;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -9,14 +9,19 @@ import java.util.List;
 import java.util.Map;
 
 public class HistogramGenerator {
-    public static Histogram generate(List<Title> titles) {
-        Map<String, Integer> histogram = new HashMap<>();
 
-        for (Title title : titles) {
-            histogram.putIfAbsent(title.type().name(), 0);
-            histogram.compute(title.type().name(), (k, v) -> v + 1);
-        }
+    private final Map<String, Integer> histogram;
 
+    public HistogramGenerator() {
+        histogram = new HashMap<>();
+    }
+
+    public void feed(Title title) {
+        histogram.putIfAbsent(title.type().name(), 0);
+        histogram.compute(title.type().name(), (k, v) -> v + 1);
+    }
+
+    public Histogram get() {
         return new MapHistogram(histogram);
     }
 

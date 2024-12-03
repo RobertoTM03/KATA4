@@ -5,19 +5,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b18cd072-c3f4-4d6e-b0d0-83826f2c3326" name="Changes" comment="Initial implementation of TSV reader and histogram generation">
-      <change afterPath="$PROJECT_DIR$/src/main/java/control/HistogramGenerator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/Histogram.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/view/HistogramDisplay.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/view/JFreeBarChartHistogramDisplay.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/view/MainFrame.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/es/ulpgc/dis/control/TitleLoader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/es/ulpgc/dis/io/SQLiteTitleDeserializer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/es/ulpgc/dis/io/SQLiteTitleReader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/es/ulpgc/dis/io/SQLiteTitleWriter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/es/ulpgc/dis/io/TitleDeserializer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/es/ulpgc/dis/io/TitleWriter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/es/ulpgc/dis/io/TsvTitleReader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/es/ulpgc/dis/view/JRandomTitlePanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Title.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Title.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/TitleDeserializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/control/TitleDeserializer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/TitleReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/control/TitleReader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/TsvTitleDeserializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/control/TsvTitleDeserializer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/TsvTitleReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/control/TsvTitleReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/ulpgc/dis/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/control/HistogramGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/ulpgc/dis/control/HistogramGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/control/TitleDeserializer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/control/TitleReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/ulpgc/dis/io/TitleReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/control/TsvTitleDeserializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/ulpgc/dis/io/TsvTitleDeserializer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/control/TsvTitleReader.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Histogram.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/ulpgc/dis/model/Histogram.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Title.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/ulpgc/dis/model/Title.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/HistogramDisplay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/ulpgc/dis/view/HistogramDisplay.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/JFreeBarChartHistogramDisplay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/ulpgc/dis/view/JFreeBarChartHistogramDisplay.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/MainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/es/ulpgc/dis/view/MainFrame.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,8 +36,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Record" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -58,18 +66,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Main.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true",
-    "last_directory_selection": "C:/dev/IS2/Kata3/src/main/java"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_directory_selection&quot;: &quot;C:/dev/IS2/Kata3/src/main/java&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/dev/IS2/PREPARADO/Kata4&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="es.ulpgc.dis.io" />
       <recent name="view" />
       <recent name="model" />
     </key>
@@ -77,15 +87,18 @@
       <recent name="HistogramGenerator" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="es.ulpgc.dis.view" />
+      <recent name="es.ulpgc.dis.io" />
+      <recent name="es.ulpgc.dis" />
       <recent name="control" />
       <recent name="model" />
     </key>
   </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="Main" />
-      <module name="Kata2" />
-      <option name="PROGRAM_PARAMETERS" value="C:\dev\IS2\title.basics.tsv" />
+      <option name="MAIN_CLASS_NAME" value="es.ulpgc.dis.Main" />
+      <module name="Kata3" />
+      <option name="PROGRAM_PARAMETERS" value="C:\dev\IS2\Kata4\title.basics.little.tsv C:\dev\IS2\Kata4\kata4.db" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
