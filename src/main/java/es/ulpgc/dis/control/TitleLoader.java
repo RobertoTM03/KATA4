@@ -5,7 +5,6 @@ import es.ulpgc.dis.io.TsvTitleReader;
 import es.ulpgc.dis.model.Title;
 
 import java.io.File;
-import java.io.IOException;
 
 public class TitleLoader {
     private final File sourceFile;

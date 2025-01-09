@@ -5,10 +5,7 @@ import es.ulpgc.dis.model.Title;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.io.File;
-import java.io.IOException;
 
 public class JRandomTitlePanel extends JPanel {
 
@@ -17,12 +14,7 @@ public class JRandomTitlePanel extends JPanel {
 
     public JRandomTitlePanel() {
         JButton randomButton = new JButton("Realize random consult");
-        randomButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                realizeConsult();
-            }
-        });
+        randomButton.addActionListener(e -> realizeConsult());
 
         resultLabel = new JLabel();
 

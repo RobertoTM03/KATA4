@@ -3,8 +3,6 @@ package es.ulpgc.dis;
 import es.ulpgc.dis.control.HistogramGenerator;
 import es.ulpgc.dis.control.TitleLoader;
 import es.ulpgc.dis.io.SQLiteTitleReader;
-import es.ulpgc.dis.io.TitleReader;
-import es.ulpgc.dis.io.TsvTitleReader;
 import es.ulpgc.dis.model.Histogram;
 import es.ulpgc.dis.model.Title;
 import es.ulpgc.dis.view.MainFrame;
