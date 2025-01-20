@@ -24,7 +24,7 @@ public class TitleLoader {
                 writer.write(title);
             }
         } catch (Exception e) {
-            throw new RuntimeException(e);
+            e.printStackTrace();
         }
     }
 }
